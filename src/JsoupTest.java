@@ -16,6 +16,7 @@ public class JsoupTest {
         // JSoup Example 2 - Reading HTML page from URL
         Document doc;
         String hiToday = null;
+        String previousHigh = null;
         Calendar now = Calendar.getInstance();
         System.out.println(now.getTime());
         now.add(Calendar.DATE, -1);
@@ -41,7 +42,7 @@ public class JsoupTest {
 
             for (Element e : doc.select("DailyForecast")) {
                 for (Element e1 : e.select("Day")) {
-                    String weather = e1.attr("Sunset").toString();
+                    String weather = e1.attr("Sunset");
                     System.out.println(weather);
                 }
             }
@@ -52,7 +53,9 @@ public class JsoupTest {
         try {
             //doc = Jsoup.connect("http://www.accuweather.com/en/us/madison-wi/53704/october-weather/23278_pc").get();
             doc = Jsoup.connect("http://api.wunderground.com/api/ba6c4ba57593f198/yesterday/q/WI/Madison.xml").get();
-            Elements e = doc.select("dailysummary summary maxtempi");
+            Elements e = doc.select("dailysummary summary");
+
+            previousHigh = e.select("maxtempi").text();
 
             //Elements e = doc.select(".box h3.date");
             /*for (Element e1 : e.select("h3.date")) {
@@ -70,13 +73,8 @@ public class JsoupTest {
 
             }
             */
+                System.out.println(previousHigh);
 
-
-            if (e.isEmpty()) {
-                System.out.println("Does not work!!!!");
-            } else {
-                System.out.println(e);
-            }
 
                 //Elements e1 = e.select(".info .actual span.temp");
                 //Elements e2 = e1.select(".info .actual span.temp");
