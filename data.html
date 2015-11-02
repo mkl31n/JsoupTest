@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" /><title>National Weather Service Text Product Display</title>
+<meta name="DC.title" content="National Weather Service Text Product Display" />
+<meta name="DC.description" content="National Weather Service is your source for the most complete weather forecast and weather related information on the web" />
+<meta name="DC.creator" content="US Department of Commerce, NOAA, National Weather Service" />
+<meta name="DC.date.created" scheme="ISO8601" content="2015-10-06" />
+<meta name="DC.date.reviewed" scheme="ISO8601" content="2014-10-01" />
+<meta name="DC.language" scheme="DCTERMS.RFC1766" content="EN-US" />
+<meta name="DC.keywords" content="weather, local weather forecast, local forecast, weather forecasts, local weather, radar, fire weather, center weather service units, hamweather" />
+<meta name="DC.publisher" content="NOAA's National Weather Service" />
+<meta name="DC.contributor" content="National Weather Service" />
+<meta name="DC.rights" content="http://www.weather.gov/disclaimer.php" />
+<meta name="rating" content="General" />
+<meta name="robots" content="index,follow" />
+<meta name="Distribution" content="Global" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<link href="/css/main_1024.css" title="nwsstyle" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/product/main.css" title="nwsstyle" rel="stylesheet" type="text/css" media="all"></head>
+<body>
+<div id="container"><a href="#skipnav" class="skip">Skip Navigation</a>
+<div id="header">
+<div id="brand"><a href="http://www.noaa.gov/" class="noaalink">NOAA</a><div class="aligncenter"><a href="http://www.weather.gov/" class="wxlink">weather.gov</a></div>
+<h1>National Weather Service Weather Forecast Office</h1>
+<a href="http://weather.gov/mkx" class="site">Milwaukee/Sullivan, WI</a>
+</div>
+<!--begin search code -->
+<div id="searchDiv">
+<ul>
+<li><a href="http://weather.gov/mkx">Home</a></li>
+<li><a href="http://weather.gov/mkx/sitemap.php">Site Map</a></li>
+<li><a href="http://www.weather.gov/pa/">News</a></li>
+<li><a href="http://weather.gov/organization.php">Organization</a></li>
+<li><form method="get" action="http://search.usa.gov/search" id="search"><div>
+    <input type="hidden" name="v:project" value="firstgov" />
+    <label for="query">Search for: <input type="text" name="query" id="query" class="input" size="10"/></label>
+    <input type="radio" name="affiliate" checked="checked" value="nws.noaa.gov" id="nws" />
+    <label for="nws">NWS</label><input type="radio" name="affiliate" value="noaa.gov" id="noaa" />
+    <label for="noaa">All NOAA</label>&nbsp;<input type="submit" class="input" value="Go" /></div></form></li>
+</ul>
+</div>
+<!--end search code -->
+</div>
+
+	<div id="menu">
+
+		<form id="fcst" action="/zipcity.php" method="post"><div>
+		  <label for="Go2">Local forecast by<br /> "City, St" or Zip Code</label>
+		  <input name="inputstring" type="text" value="City, St" size="8" onfocus="this.value='';" />
+		  <input name="Go2" id="Go2" type="submit" value="Go" />
+		  <input type="hidden" name="siteid" value="mkx" /></div>
+		</form>
+		<ul>
+		<li><ul><li>
+			<a href="http://www.weather.gov/rss/"><img src="/images/xml.gif" alt="RSS Feeds" title="RSS Feeds" width="36" height="14" class="img" /> RSS Feeds</a>
+		</li></ul></li><li>Warnings
+<ul>
+<li><a href="http://www.weather.gov/view/nationalwarnings.php?map=on" title="Current">Current</a></li>
+<li><a href="http://www.weather.gov/alerts-beta/" title="By State/County...">By State/County...</a></li>
+<li><a href="http://www.cpc.ncep.noaa.gov/products/stratosphere/uv_index/uv_alert.shtml" title="UV Alerts">UV Alerts</a></li>
+<li><a href="http://www.weather.gov/warnings.php" title="More Warnings">more....</a></li>
+</ul>
+</li>
+<li>Observations
+<ul>
+<li><a href="http://www.weather.gov/radar_tab.php" title="Radar">Radar</a></li>
+<li><a href="http://www.goes.noaa.gov/" title="Satellite">Satellite</a></li>
+<li><a href="http://www.nohrsc.noaa.gov/" title="Snow Cover">Snow Cover</a></li>
+<li><a href="http://www.weather.gov/om/osd/portal.shtml" title="Surface Weather...">Surface Weather...</a></li>
+<li><a href="http://water.weather.gov/precip" title="Observed Precip">Observed Precip</a></li>
+<li><a href="http://www.weather.gov/observations.php" title="More Observations">more....</a></li>
+</ul>
+</li>
+<li>Forecasts
+<ul>
+<li><a href="http://www.weather.gov/organization.php" title="Local">Local</a></li>
+<li><a href="http://www.weather.gov/forecasts/graphical/" title="Graphical">Graphical</a></li>
+<li><a href="http://aviationweather.gov/" title="Aviation">Aviation</a></li>
+<li><a href="http://www.weather.gov/om/marine/home.htm" title="Marine">Marine</a></li>
+<li><a href="http://www.nhc.noaa.gov/" title="Hurricanes">Hurricanes</a></li>
+<li><a href="http://www.spc.noaa.gov/" title="Severe Weather">Severe Weather</a></li>
+<li><a href="http://www.spc.noaa.gov/products/fire_wx/" title="Fire Weather">Fire Weather</a></li>
+<li><a href="http://www.weather.gov/forecasts.php" title="More Forecasts">more....</a></li>
+</ul>
+</li>
+<li>Text Messages
+<ul>
+<li><a href="http://www.weather.gov/view/states.php" title="Text messages by State">By State</a></li>
+<li><a href="http://www.weather.gov/view/validProds.php" title="Text messages by type">By Message Type</a></li>
+<li><a href="http://www.weather.gov/view/national.php?map=on" title="National text messages">National</a></li>
+</ul>
+</li>
+<li>Forecast Models
+<ul>
+<li><a href="http://www.nco.ncep.noaa.gov/pmb/nwprod/analysis/" title="Forecast numerical models">Numerical Models</a></li>
+<li><a href="http://www.weather.gov/mdl/synop/products.php" title="MOS Prod Statistical Model">MOS Prod Statistical Model</a></li>
+<li><a href="http://www.weather.gov/mdl/gfslamp/gfslamp.shtml" title="GFS-LAMP Prod Statistical Model">GFS-LAMP Prod Statistical Model</a></li>
+<li><a href="http://www.weather.gov/maps.php" title="Forecast Models more">more....</a></li>
+</ul>
+</li>
+<li>Climate
+<ul>
+<li><a href="http://www.weather.gov/climate/" title="Past Weather">Past Weather</a></li>
+<li><a href="http://www.weather.gov/predictions.php" title="Predictions">Predictions</a></li>
+</ul>
+</li>
+<li>Weather Safety
+<ul>
+<li><a href="http://www.weather.gov/nwr/" title="Weather Radio">Weather Radio</a></li>
+<li><a href="http://www.cpc.noaa.gov/products/expert_assessment/threats.html" title="Hazard Assmt...">Hazard Assmt...</a></li>
+<li><a href="http://www.stormready.noaa.gov/" title="StormReady">StormReady</a></li>
+<li><a href="http://www.stormready.noaa.gov/tsunamiready/" title="TsunamiReady ">TsunamiReady </a></li>
+<li><a href="http://weather.gov/skywarn/" title="Skywarn™">Skywarn™</a></li>
+<li><a href="http://www.weather.gov/safety.php" title="More weather safety">more....</a></li>
+</ul>
+</li>
+<li>Education/Outreach
+<ul>
+<li><a href="http://www.weather.gov/education.php" title="Education and Outreach Information">Information</a></li>
+</ul>
+</li>
+<li>Information Center
+<ul>
+<li><a href="http://tsunami.gov/" title="Tsunamis">Tsunamis</a></li>
+<li><a href="http://www.weather.gov/om/publications.shtml" title="Publications...">Publications...</a></li>
+<li><a href="http://www.weather.gov/information_center.php" title="More information center">more....</a></li>
+</ul>
+</li>
+<li>Contact Us
+<ul>
+<li><a href="http://www.weather.gov/pa/faq.php" title="FAQ">FAQ
+</a></li>
+<li><a href="http://www.weather.gov/feedback.php" title="Comments...">Comments...</a></li>
+</ul>
+</li>
+</ul><br /></div><a name="skipnav"></a>
+<div id="local"> <div id="localcontent">
+<!-- // CONTENT STARTS HERE -->
+
+<span style="font-size: 20px; font-weight:bold;">Climatological Report (Daily) </span><br />Issued by NWS Milwaukee/Sullivan, WI<br /><br /><div><a href="http://weather.gov/mkx/">Home</a>&nbsp;|&nbsp;<b>Current Version</b>&nbsp;|&nbsp;<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=2&glossary=0">Previous Version</a>&nbsp;|&nbsp;<a href="?site=MKX&issuedby=MSN&product=CLI&format=txt&version=1&glossary=0">Text Only</a>&nbsp;|&nbsp;<a href="javascript:window.print()">Print</a>&nbsp;|&nbsp;<a href="product_types.php?site=MKX">Product List</a>&nbsp;|&nbsp;<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=1&glossary=1">Glossary On</a></div><div>Versions: <b>1</b> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=2&glossary=0">2</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=3&glossary=0">3</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=4&glossary=0">4</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=5&glossary=0">5</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=6&glossary=0">6</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=7&glossary=0">7</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=8&glossary=0">8</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=9&glossary=0">9</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=10&glossary=0">10</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=11&glossary=0">11</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=12&glossary=0">12</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=13&glossary=0">13</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=14&glossary=0">14</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=15&glossary=0">15</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=16&glossary=0">16</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=17&glossary=0">17</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=18&glossary=0">18</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=19&glossary=0">19</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=20&glossary=0">20</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=21&glossary=0">21</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=22&glossary=0">22</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=23&glossary=0">23</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=24&glossary=0">24</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=25&glossary=0">25</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=26&glossary=0">26</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=27&glossary=0">27</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=28&glossary=0">28</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=29&glossary=0">29</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=30&glossary=0">30</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=31&glossary=0">31</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=32&glossary=0">32</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=33&glossary=0">33</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=34&glossary=0">34</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=35&glossary=0">35</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=36&glossary=0">36</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=37&glossary=0">37</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=38&glossary=0">38</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=39&glossary=0">39</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=40&glossary=0">40</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=41&glossary=0">41</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=42&glossary=0">42</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=43&glossary=0">43</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=44&glossary=0">44</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=45&glossary=0">45</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=46&glossary=0">46</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=47&glossary=0">47</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=48&glossary=0">48</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=49&glossary=0">49</a> 
+<a href="?site=MKX&issuedby=MSN&product=CLI&format=CI&version=50&glossary=0">50</a> <hr size="1" width="520"noshade="noshade" align="left" /></div><pre class="glossaryProduct">
+600
+CDUS43 KMKX 310649
+CLIMSN
+
+
+CLIMATE REPORT
+NATIONAL WEATHER SERVICE IN MILWAUKEE
+148 AM CDT SAT OCT 31 2015
+
+
+...................................
+
+...THE MADISON WI CLIMATE SUMMARY FOR OCTOBER 30 2015...
+
+CLIMATE NORMAL PERIOD 1981 TO 2010
+CLIMATE RECORD PERIOD 1871 TO 2015
+
+
+WEATHER ITEM   OBSERVED TIME   RECORD YEAR NORMAL DEPARTURE LAST
+                VALUE   (LST)  VALUE       VALUE  FROM      YEAR
+                                                  NORMAL
+..................................................................
+TEMPERATURE (F)
+ YESTERDAY
+  MAXIMUM         50    111 PM  78    1971  53     -3       51
+  MINIMUM         34    129 AM  13    1988  35     -1       31
+  AVERAGE         42                        44     -2       41
+
+PRECIPITATION (IN)
+  YESTERDAY        0.00          1.43 1919   0.08  -0.08      T
+  MONTH TO DATE    2.34                      2.32   0.02     3.08
+  SINCE SEP 1      8.33                      5.45   2.88     4.92
+  SINCE JAN 1     31.12                     30.27   0.85    32.73
+
+SNOWFALL (IN)
+  YESTERDAY        0.0           0.8  1923   0.1   -0.1      0.0
+  MONTH TO DATE    T                         0.5   -0.5       T
+  SINCE SEP 1      T                         0.5   -0.5       T
+  SINCE JUL 1      T                         0.5   -0.5       T
+  SNOW DEPTH       0
+
+DEGREE DAYS
+ HEATING
+  YESTERDAY       23                        21      2       24
+  MONTH TO DATE  393                       484    -91      429
+  SINCE SEP 1    459                       655   -196      595
+  SINCE JUL 1    491                       692   -201      612
+
+ COOLING
+  YESTERDAY        0                         0      0        0
+  MONTH TO DATE    1                         0      1        0
+  SINCE SEP 1    137                        51     86       44
+  SINCE JAN 1    666                       564    102      620
+..................................................................
+
+
+WIND (MPH)
+  HIGHEST WIND SPEED    14   HIGHEST WIND DIRECTION     S (190)
+  HIGHEST GUST SPEED    20   HIGHEST GUST DIRECTION    SW (220)
+  AVERAGE WIND SPEED     5.6
+
+
+SKY COVER
+  POSSIBLE SUNSHINE  MM
+  AVERAGE SKY COVER 0.7
+
+
+WEATHER CONDITIONS
+ THE FOLLOWING WEATHER WAS RECORDED YESTERDAY.
+  FOG
+
+
+RELATIVE HUMIDITY (PERCENT)
+ HIGHEST   100           500 AM
+ LOWEST     71           100 PM
+ AVERAGE    86
+
+..........................................................
+
+
+THE MADISON WI CLIMATE NORMALS FOR TODAY
+                         NORMAL    RECORD    YEAR
+ MAXIMUM TEMPERATURE (F)   52        77      1950
+                                             1933
+ MINIMUM TEMPERATURE (F)   34        16      1925
+
+
+SUNRISE AND SUNSET
+OCTOBER 31 2015.......SUNRISE   730 AM CDT   SUNSET   551 PM CDT
+NOVEMBER  1 2015......SUNRISE   632 AM CST   SUNSET   449 PM CST
+
+
+-  INDICATES NEGATIVE NUMBERS.
+R  INDICATES RECORD WAS SET OR TIED.
+MM INDICATES DATA IS MISSING.
+T  INDICATES TRACE AMOUNT.
+
+
+
+
+$$
+
+
+
+</pre>
+
+
+
+<!-- // CONTENT ENDS HERE -->
+</div></div>
+<div id="required">
+<hr class="required" />
+<div id="firstgov"><a href="/nwsexit.php?url=http://www.usa.gov/"><img src="/css/default/images/usagov.gif" alt="USA.gov is the U.S. government's official web portal to all federal, state and local government web resources and services." class="img" width="110" height="30" /></a></div>
+<ul id="contact">
+<li>National Weather Service</li>
+<li>Milwaukee/Sullivan, WI Weather Forecast Office</li>
+<li>N3533 Hardscrabble Road</li><li>Dousman, WI  53118</li>
+<li>262-965-2074</li>
+<li>Page Author: MKX Webmaster</li>
+<li>Web Master's E-mail: <a href="mailto:w-mkx.webmaster@noaa.gov">w-mkx.webmaster@noaa.gov</a></li>
+<li>Page last modified: Oct 6th, 2015 16:46 UTC</li>
+</ul>
+<ul id="disclaimer">
+<li><a href="http://www.weather.gov/disclaimer.php">Disclaimer</a></li>
+<li><a href="http://www.weather.gov/credits.php">Credits</a></li>
+<li><a href="http://www.weather.gov/glossary/">Glossary</a></li>
+</ul>
+<ul id="policy">
+<li><a href="http://www.weather.gov/privacy.php">Privacy Policy</a></li>
+<li><a href="http://www.weather.gov/admin.php">About Us</a></li>
+<li><a href="http://www.weather.gov/careers.php">Career Opportunities</a></li>
+</ul>
+</div></div>
+</body></html>
